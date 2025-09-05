@@ -56,16 +56,15 @@ predictions = model.predict(X_test, batch_size=1)
 pred_classes = np.argmax(predictions, axis=1)
 true_classes = np.argmax(y_test, axis=1)
 
-# Tradução dos nomes das classes
 class_names_pt = ["Iris-setosa", "Iris-versicolor", "Iris-virgínica"]
 
 print("\n[INFO] Relatório de Classificação:\n")
 print(classification_report(true_classes, pred_classes, target_names=class_names_pt, digits=2))
 
-# Avaliação final em português
+# Avaliação final
 print(f"\n[INFO] Acurácia final no conjunto de teste: {accuracy*100:.2f}%")
 
-# Gráfico de treinamento (mantive em português também)
+# Gráfico de treinamento
 plt.style.use("ggplot")
 plt.figure()
 plt.plot(np.arange(0, 100), H.history["loss"], label="Perda (treino)")
